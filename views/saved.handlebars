@@ -1,0 +1,62 @@
+</div>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <div class="rrheader">
+            <h1 class="display-4" align=center>Redmond Reporter News Scraper</h1>
+            <p class="lead" align=center>Get the latest in local news</p>
+        </div>
+    </div>
+</div>
+<!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Your Notes</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal Form -->
+            <div class="md-form">
+                <i class="fas fa-pencil prefix grey-text"></i>
+                <textarea type="text" id="modalNote" class="md-textarea form-control" rows="4"></textarea>
+                <!--  <label data-error="wrong" data-success="right" for="form8">Your message</label> -->
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" id="saveNote" class="btn btn-primary" data-dismiss="modal">Save</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="main">
+    <div class="row" id="saveTitle">
+        <a id="backLink" href="/">Back</a>
+        <h4 class="mx-auto">Your Saved Articles</h4>
+    </div>
+    <br>
+    
+    {{#each article}}{{#if this.saved}}
+    <div class="row" id="individualArticle">
+        {{title}}
+        <div class="btnGroup">
+            <button type="button" class="btn btn-small" id="notes" data-id="{{_id}}" data-saved="{{saved}}" data-toggle="modal"
+                data-target="#myModal">
+                Notes
+            </button>
+            <button type="button" class="btn btn-small" id="deleteNotes" data-id="{{_id}}" data-saved="{{saved}}">
+                Delete
+            </button>
+        </div>
+    </div>
+    <br>
+    {{/if}}{{/each}}
+</div>
+
+

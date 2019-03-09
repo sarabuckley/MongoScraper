@@ -1,0 +1,47 @@
+<div class="jumbotron jumbotron-fluid" <span class="border-bottom"></span>>
+    <div class="container">
+        <div class="rrheader">
+            <h1 class="display-4" align=center>Redmond Reporter News Scraper</h1>
+            <p class="lead" align=center>Get the latest in local news</p>
+        </div>
+    </div>
+</div>
+
+<div class="row"></div>
+<nav class="navbar navbar-expand-lg">
+      
+        <h4 class="navTitle">Redmond, WA</h4>
+
+        <button class="btn btn-default ml-auto" type="button" id="scrapeButton">Scrape New
+            Articles!</button>
+        <button class="btn btn-default" type="button" id="savedButton">Saved Articles</button>
+
+        <a class="nav-link" href="https://github.com/sarabuckley/MongoScraper.git">Git Hub Repo</a>
+</nav>
+<br>
+</div>
+
+<div class="main">
+        {{#each article}}
+        <div class="row" id="individualArticle">
+            {{title}}
+            <div class=btnGroup>
+                <a class="btn btn-small" href="{{link}}" target="_blank">
+                    Read
+                </a>    
+                <button type="button" class="btn btn-small" id="save" data-id="{{_id}}" data-saved="{{saved}}">
+                    Save
+                </button>
+            </div>
+        </div>
+        <br>
+    {{else}}
+    <div class="row">
+        <div class="col-sm" id="noArticles">
+            <p>Uh oh! Looks like we don't have any articles.</p>
+        </div>
+    </div>
+    {{/each}}
+</div>
+
+
