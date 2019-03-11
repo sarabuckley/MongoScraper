@@ -20,7 +20,7 @@ app.use(express.json());
 // Make public a static folder
 app.use(express.static("public"));
 
-//var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3000;
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/rreporter";
 
 // Connect to the Mongo DB
